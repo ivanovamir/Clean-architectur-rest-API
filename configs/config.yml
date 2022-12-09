@@ -1,0 +1,8 @@
+port: "8080"
+
+db:
+  host: "localhost"
+  username: "amir"
+  dbname: "test"
+  port: "5432"
+  sslmode: "disable"
