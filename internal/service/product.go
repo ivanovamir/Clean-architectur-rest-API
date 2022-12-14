@@ -15,7 +15,7 @@ func NewProductService(repo repository.Product) *ProductService {
 	}
 }
 
-func (s *ProductService) GetAllProductsByParams(params *dto.Params) ([]*dto.Product, error) {
+func (s *ProductService) GetAllProductsByParams(params *dto.Params) ([]dto.Product, error) {
 	return s.repo.GetAllProductsByParams(params)
 }
 

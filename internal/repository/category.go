@@ -20,26 +20,11 @@ func (r *CategoryRepository) GetAllCategories() ([]dto.Category, error) {
 	var allCategories []dto.Category
 	query := fmt.Sprint("SELECT id, title, image FROM category")
 	err := r.db.Select(&allCategories, query)
-	if err != nil {
-		return nil, err
-	}
-	return allCategories, nil
+	return allCategories, err
 }
 
-func (r *CategoryRepository) GetCategoriesById(id *dto.CategoryParams) ([]*dto.Category, error) {
-	//var category *models.Category
-	//if err := r.db.Where("id=?", id.ID).First(&category).Error; err != nil {
-	//	return nil, err
-	//} else {
-	//	var resAlready []*dto.Category
-	//	result := &dto.Category{
-	//		ID:         fmt.Sprint(category.Id),
-	//		Title:      category.Title,
-	//		Image:      category.Image,
-	//		CountItems: "0",
-	//	}
-	//	resAlready = append(resAlready, result)
-	//	return resAlready, nil
-	//}
-	return nil, nil
+func (r *CategoryRepository) GetCategoriesById(id *dto.CategoryParams) ([]dto.Category, error) {
+	var category []dto.Category
+	err := r.db.Select(&category, "SELECT id, title, image FROM category WHERE id = $1", id.ID)
+	return category, err
 }

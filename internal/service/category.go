@@ -19,6 +19,6 @@ func (s *CategoryService) GetAllCategories() ([]dto.Category, error) {
 	return s.repo.GetAllCategories()
 }
 
-func (s *CategoryService) GetCategoriesById(id *dto.CategoryParams) ([]*dto.Category, error) {
+func (s *CategoryService) GetCategoriesById(id *dto.CategoryParams) ([]dto.Category, error) {
 	return s.repo.GetCategoriesById(id)
 }

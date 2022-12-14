@@ -1,29 +1,19 @@
 package dto
 
 type Product struct {
-	Id            string `json:"id"`
-	Category      string `json:"category"`
-	Title         string `json:"title"`
-	VendorCode    string `json:"vendor_code"`
-	Code1c        string `json:"code_1c"`
-	Description   string `json:"description"`
-	Price         string `json:"price"`
-	ImageOriginal string `json:"image_original"`
-	Image128      string `json:"image_128"`
-	Image432      string `json:"image_432"`
+	Id         string `json:"id" db:"id"`
+	CategoryId int    `json:"category_id" db:"category_id"`
+	Title      string `json:"title" db:"title"`
+	Price      string `json:"price" db:"price"`
+	Image      string `json:"image" db:"image"`
 }
 
 type ProductInformation struct {
-	Id                string     `json:"id"`
-	Category          string     `json:"category"`
-	Title             string     `json:"title"`
-	VendorCode        string     `json:"vendor_code"`
-	Code1c            string     `json:"code_1c"`
-	Quantity          string     `json:"quantity"`
-	Description       string     `json:"description"`
-	Price             string     `json:"price"`
-	ImageOriginal     string     `json:"image_original"`
-	Image128          string     `json:"image_128"`
-	Image432          string     `json:"image_432"`
-	RelativesProducts []*Product `json:"relatives_products"`
+	Id          string `json:"id" db:"id"`
+	CategoryId  int    `json:"category_id" db:"category_id"`
+	Title       string `json:"title" db:"title"`
+	VendorCode  string `json:"vendor_code" db:"vendor_code"`
+	Description string `json:"description" db:"description"`
+	Price       string `json:"price" db:"price"`
+	Image       string `json:"image" db:"image"`
 }

@@ -13,11 +13,11 @@ type Service struct {
 
 type Category interface {
 	GetAllCategories() ([]dto.Category, error)
-	GetCategoriesById(id *dto.CategoryParams) ([]*dto.Category, error)
+	GetCategoriesById(id *dto.CategoryParams) ([]dto.Category, error)
 }
 
 type Product interface {
-	GetAllProductsByParams(params *dto.Params) ([]*dto.Product, error)
+	GetAllProductsByParams(params *dto.Params) ([]dto.Product, error)
 	GetProductDetail(id string) (*dto.ProductInformation, error)
 	ParseUrlParams() []int
 }
